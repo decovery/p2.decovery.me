@@ -31,7 +31,7 @@ A email designated to receive messages from the server. Examples:
 	define('SYSTEM_EMAIL', 'aiste@akmila.lt'); 
 
 # Default DB name for this app
-	define('DB_NAME', "p2_decovery_me"); 
+	define('DB_NAME', "decovery_p2_decovery_me"); 
 
 # Timezone
 	define('TIMEZONE', 'America/New_York');
