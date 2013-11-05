@@ -1,11 +1,19 @@
-<p>
-	Hello World! You have successfully spawned a new application.
-</p>
+<?php if(!$user): ?>
 
-<p>
-	This message is being triggered via the c_index.php controller, within the index() method.
-</p>
+	<h1>Welcome to <?=APP_NAME?></h1>
 
-<p>
-	<strong>Since everything is in working order, you should now delete <?php echo APP_PATH?>diagnostics.php</strong>
-</p>
+	<?= $signup ?>
+	<br/>
+	or
+	<br/>
+        <!-- Display the login module -->
+	<?=$login?>
+
+<?php else: ?>
+
+	<h1>Welcome to <?=APP_NAME?><?= ', '.$user->first_name; ?></h1>
+	
+	
+
+
+<?php endif; ?>
