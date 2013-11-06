@@ -235,23 +235,30 @@ class users_controller extends base_controller {
     
     public function p_upload_avatar() {
    
-    	# Upload avatar picture
-    	$avatar = Upload::upload($_FILES, "/uploads/avatars/", array("jpg", "jpeg", "gif", "png"), $this->user->user_id);
+   		if (isset($_FILES['avatar']) && $_FILES['avatar']['error'] == 0) {
+	    	
+	    	# Upload avatar picture
+	    	$avatar = Upload::upload($_FILES, "/uploads/avatars/", array("jpg", "jpeg", "gif", "png"), $this->user->user_id);
+	    	    	
+	       	# Update database
+	       	$data = Array("avatar" => $avatar);
+	    	
+	    	DB::instance(DB_NAME)->update("users", $data, "WHERE  user_id = ".$this->user->user_id);
+	    	
+	    	# Create new image object and resize it
+	    	$imgObj = new Image(APP_PATH.'/uploads/avatars/'. $avatar);
+	    	
+	    	$imgObj->resize(150,150, "crop");
+	    	
+	    	$imgObj->save_image(APP_PATH.'/uploads/avatars/'. $avatar);
+	    	
+	    	# Render template
+	    	Router::redirect("/users/profile"); 
+    	} 
     	
-       	# Update database
-       	$data = Array("avatar" => $avatar);
-    	
-    	DB::instance(DB_NAME)->update("users", $data, "WHERE  user_id = ".$this->user->user_id);
-    	
-    	# Create new image object and resize it
-    	$imgObj = new Image(APP_PATH.'/uploads/avatars/'. $avatar);
-    	
-    	$imgObj->resize(150,150, "crop");
-    	
-    	$imgObj->save_image(APP_PATH.'/uploads/avatars/'. $avatar);
-    	
-    	# Render template
-    	Router::redirect("/users/profile");
+    	else {
+    		echo "Error! You haven't chosen any image, or our image is wrong type. Please  <a href='/users/upload_avatar/'>try again.</a>";
+    	}
 	}
     
 

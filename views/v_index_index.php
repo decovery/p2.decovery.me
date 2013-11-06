@@ -1,19 +1,22 @@
 <?php if(!$user): ?>
 
-	<h1>Welcome to <?=APP_NAME?></h1>
+	<h1>Welcome to <?=APP_NAME?>!</h1>
 
-	<?= $signup ?>
-	<br/>
-	or
-	<br/>
+	<div id="signup-block">
+		<!-- Display the signup module -->
+		<?= $signup ?>
+	</div>
+	
+	<i id="or">or</i>
+	
+	<div id="login-block">
         <!-- Display the login module -->
-	<?=$login?>
+		<?=$login?>
+	</div>
 
 <?php else: ?>
 
+	<img src="<?= $user->avatar; ?>" alt="<?= $user->first_name; ?>">
 	<h1>Welcome to <?=APP_NAME?><?= ', '.$user->first_name; ?></h1>
-	
-	
-
 
 <?php endif; ?>

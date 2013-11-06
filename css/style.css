@@ -33,9 +33,10 @@ time, mark, audio, video {
 body {
 	line-height: 1.5;
 	-webkit-font-smoothing: antialiased;
-	font-family: "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+	font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+	color: #444444;
 }
-ol, ul {
+ul {
 	list-style: none;
 }
 blockquote, q {
@@ -54,22 +55,26 @@ table {
 /*typography styling*/
 
 a {
-	color: rgb(70,133,137);
+	color: rgb(112,57,91);
 	text-decoration: none;
-	border-bottom: 1px dotted;
 }
 i {
+	font-family: Georgia, serif;
 	font-style: italic;
+	font-size: 0.85em;
+	color: rgb(80,80,80);
 }
 h2 {
-	text-align: center;
 	font-weight: 300;
-	font-size: 2.618em;
+	font-size: 1.25em;
 	color: rgb(112,57,91);
 }
 p {
 	color: rgb(80,80,80);
-	padding: 10px 30px;
+	padding: 10px 0;
+}
+ol {
+	list-style-position: inside;
 }
 
 /*layout*/
@@ -81,4 +86,68 @@ body {
 	position: relative;
 	width: 900px;
 	margin: 30px auto;
+}
+#header {
+	overflow: hidden;
+}
+#logo {
+	font-family: 'Oswald', sans-serif;
+	font-size: 2.618em;
+	color: #000000;
+	float: left;
+}
+#sign-in {
+	float: right;
+	margin-top: 15px;
+}
+#sign-in a {
+	padding: 0 15px;
+	text-decoration: none;
+	color: rgb(70,133,137);
+}
+#sign-in a:hover {
+	color: rgb(112,57,91);;
+}
+hr {
+	border: 0;
+	border-bottom: 1px solid #cccccc;
+}
+#menu a {
+	font-family: 'Oswald', sans-serif;
+	font-weight: 300;
+	font-size: 1.25em;
+	color: rgb(112,57,91);
+	text-decoration: none;
+	padding: 0 20px;
+}
+.content {
+	width: 100%;
+	overflow: hidden;
+	padding: 50px 20px;
+}
+#signup-block, #login-block {
+	padding: 30px 0;
+	width: 45%;
+	float: left;
+}
+#or {
+	width: 9%;
+	float: left;
+	padding: 0 10px;
+	padding-top: 35px;
+}
+img {
+	width: 150px;
+	max-width: 150px;
+	border-radius: 50%;
+}
+.member {
+	overflow: hidden;
+	padding: 10px;
+}
+.member h2, .member img {
+	float: left;
+}
+.member h2 {
+	padding: 50px;
 }

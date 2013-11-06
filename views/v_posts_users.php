@@ -1,6 +1,6 @@
 <?php foreach($users as $user): ?>
 
-	<?= $user['first_name'] ?> <?= $user['last_name'] ?>
+	<img src="<?= AVATAR_PATH.$user['avatar'] ?>"><?= $user['first_name'] ?> <?= $user['last_name'] ?><?= $user['bio'] ?>
 	
 	<?php if(isset($connections[$user['user_id']])): ?>
 		<a href='/posts/unfollow/<?= $user['user_id'] ?>'>Unfollow</a>

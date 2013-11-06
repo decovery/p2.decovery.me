@@ -12,7 +12,7 @@ class index_controller extends base_controller {
 		$this->template->content = View::instance('v_index_index');
 			
 		# <title> tag
-		$this->template->title = "Bookworm";
+		$this->template->title = "BookTalk";
 		
 		# Pass the login module
 		$this->template->content->login = View::instance('v_users_login');
