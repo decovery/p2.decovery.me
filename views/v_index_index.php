@@ -18,7 +18,7 @@
 <!--If user logged in display welcome message-->
 <?php else: ?>
 
-	<img src="<?= $user->avatar; ?>" alt="<?= $user->first_name; ?>">
-	<h1>Welcome to <?=APP_NAME?><?= ', '.$user->first_name; ?></h1>
+	<img src="<?= $user->avatar ?>" alt="<?= $user->first_name ?>">
+	<h1>Welcome to <?=APP_NAME?><?= ', '.$user->first_name ?></h1>
 
 <?php endif; ?>

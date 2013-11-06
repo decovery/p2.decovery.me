@@ -13,7 +13,7 @@
 
 <br /><br />
 
-<img src="<?= $user->avatar ?>" alt="" />
+<img src="<?= $user->avatar ?>" alt="<?= $user->first_name ?>" />
 
 <br /><br />
 

@@ -2,7 +2,7 @@
 <?php foreach($users as $user): ?>
 
 	<div class="member">
-		<img src="<?= AVATAR_PATH.$user['avatar'] ?>">
+		<img src="<?= AVATAR_PATH.$user['avatar'] ?>" alt="<?= $user->first_name ?>">
 		<h2><?= $user['first_name'] ?> <?= $user['last_name'] ?></h2>
 		
 		<!--Follow/unfollow link-->

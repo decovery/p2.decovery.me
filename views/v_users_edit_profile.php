@@ -15,5 +15,5 @@
 
 <br /><br />
 	
-<img src='<?=$avatar?>'>
+<img src="<?=$avatar?>" alt="<?= $user->first_name ?>">
 	
