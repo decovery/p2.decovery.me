@@ -12,3 +12,7 @@
 </article>
 
 <?php endforeach; ?>
+
+<?php if($posts == NULL): ?>
+	<i>No posts to display.</i>
+<?php endif; ?>
