@@ -1,27 +1,28 @@
+<!--Signup form for new users-->
 <form method='POST' action='/users/p_signup'>
 
 	<h2>Sign-up:</h2>
 
     First Name<br>
-    <input type='text' name='first_name' required>
+    <input type='text' name='first_name'>
     <br><br>
 
     Last Name<br>
-    <input type='text' name='last_name' required>
+    <input type='text' name='last_name'>
     <br><br>
 
     Email<br>
-    <input type='text' name='email' required>
+    <input type='text' name='email'>
     <br><br>
 
     Password<br>
-    <input type='password' name='password' required>
+    <input type='password' name='password'>
     <br><br>
     
-    
+    <!--If errors - display message-->
     <?php if(isset($error)): ?>
     	<div class='error'>
-    	All fields are required. Sign up failed.
+    		<p>All fields are required. Sign up failed.</p>
     	</div>
     	<br>
     <?php endif; ?>

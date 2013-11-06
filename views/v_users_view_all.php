@@ -1,3 +1,4 @@
+<!--View users list (for uregistered users - only avatar and name displayed)-->
 <h1>List of <?= APP_NAME ?> members.</h1> 
 
 <!--If member is not logged in he/she can see only the names/avatars of members but can't follow them.-->

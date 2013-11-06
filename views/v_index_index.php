@@ -1,3 +1,4 @@
+<!--If not logged in user display sign up and login forms-->
 <?php if(!$user): ?>
 
 	<h1>Welcome to <?=APP_NAME?>!</h1>
@@ -14,6 +15,7 @@
 		<?=$login?>
 	</div>
 
+<!--If user logged in display welcome message-->
 <?php else: ?>
 
 	<img src="<?= $user->avatar; ?>" alt="<?= $user->first_name; ?>">

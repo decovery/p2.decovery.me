@@ -189,3 +189,6 @@ img {
 .edit-profile a:hover {
 	color: rgb(112,57,91);
 }
+.error {
+	color: red;
+}

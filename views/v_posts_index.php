@@ -1,3 +1,4 @@
+<!--Display posts from followed users-->
 <?php foreach ($posts as $post): ?>
 
 <article class="post">
@@ -7,8 +8,6 @@
 		<?= Time::display($post['created']) ?>
 	</time></i>
 	<p><?= $post['content'] ?></p>
-	
-	
 	
 </article>
 
