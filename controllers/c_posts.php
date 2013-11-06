@@ -6,7 +6,7 @@ class posts_controller extends base_controller {
 		
 		# Not logged in users can't see the posts
 		if(!$this->user) {
-			die("Please <a href='/users/login'>login.</a>");
+			Router::redirect("/");
 		}
 	}
 	
@@ -53,6 +53,14 @@ class posts_controller extends base_controller {
 	
 	public function p_add() {
 	
+		if (empty($_POST['content'])) {
+				
+			# Display error message
+			#Router::redirect("/users/signup/error");
+			echo "You must post something. <a href='/posts/add'>Back &rarr;</a>";
+		}
+		
+		else {
 		# Associate this post with this user
 		$_POST['user_id'] = $this->user->user_id;
 		
@@ -64,7 +72,8 @@ class posts_controller extends base_controller {
 		DB::instance(DB_NAME)->insert('posts', $_POST);
 		
 		# Feddback
-		echo "Your post has been added. <a href='/posts/add'>Add another post</a>";
+		Router::redirect("/posts/index");
+		}
 	}
 	
 	public function users() {

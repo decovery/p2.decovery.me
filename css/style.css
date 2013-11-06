@@ -64,6 +64,11 @@ i {
 	font-size: 0.85em;
 	color: rgb(80,80,80);
 }
+h1 {
+	font-family: 'Oswald', sans-serif;
+	font-size: 1.8em;
+	color: #8c8c8c;
+}
 h2 {
 	font-weight: 300;
 	font-size: 1.25em;
@@ -106,7 +111,7 @@ body {
 	color: rgb(70,133,137);
 }
 #sign-in a:hover {
-	color: rgb(112,57,91);;
+	color: rgb(112,57,91);
 }
 hr {
 	border: 0;
@@ -149,5 +154,38 @@ img {
 	float: left;
 }
 .member h2 {
-	padding: 50px;
+	padding: 7px 50px;
+}
+.member i {
+	float: left;
+	padding-top: 14px;
+}
+.bio {
+	float: right;
+	width: 35%;
+}
+.content textarea {
+	width: 60%;
+	min-height: 100px;
+}
+.post {
+	padding: 10px 0;
+}
+.post p {
+	font-family: Georgia, serif;
+	padding-left: 30px;
+}
+.unfollow {
+	color: #666666;
+}
+.edit-profile a {
+	padding: 0 15px;
+	text-decoration: none;
+	color: rgb(70,133,137);
+}
+.edit-profile a:first-child {
+	padding-left: 0;
+}
+.edit-profile a:hover {
+	color: rgb(112,57,91);
 }

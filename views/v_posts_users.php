@@ -1,15 +1,25 @@
 <?php foreach($users as $user): ?>
 
-	<img src="<?= AVATAR_PATH.$user['avatar'] ?>"><?= $user['first_name'] ?> <?= $user['last_name'] ?><?= $user['bio'] ?>
+	<div class="member">
+	<img src="<?= AVATAR_PATH.$user['avatar'] ?>">
+	<h2><?= $user['first_name'] ?> <?= $user['last_name'] ?></h2>
+	
 	
 	<?php if(isset($connections[$user['user_id']])): ?>
-		<a href='/posts/unfollow/<?= $user['user_id'] ?>'>Unfollow</a>
+		<i><a class="unfollow" href='/posts/unfollow/<?= $user['user_id'] ?>'>Unfollow</a></i>
 	
 	<?php else: ?>
-		<a href='/posts/follow/<?= $user['user_id'] ?>'>Follow</a>
-	
+		
+		<i><a class="follow" href='/posts/follow/<?= $user['user_id'] ?>'>Follow</a></i>
 	<?php endif; ?>
 	
-	<br /><br />
+	<?php if(!empty($user['bio'])): ?>
+	<div class="bio">
+	<p><?= $user['bio'] ?></p>
+	</div>
+	<?php endif; ?>
+	
+	
+	</div>
 	
 <?php endforeach; ?>

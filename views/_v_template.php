@@ -43,7 +43,8 @@
 			<?php if($user): ?>
 			
 				<a href='/posts/index'>See members' posts</a>
-				<a href='/posts/users'>Follow members</a>			
+				<a href='/posts/users'>Follow members</a>
+				<a href='/posts/add'>Add posts</a>			
 			
 			<!-- Menu options for users who are not logged in -->
 			<?php else: ?>

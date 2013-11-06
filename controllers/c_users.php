@@ -44,8 +44,8 @@ class users_controller extends base_controller {
 		# Prevent from leaving blank fields		
 		if (empty($_POST['last_name']) || empty($_POST['first_name']) || empty($_POST['password']) || empty($_POST['email'])) {
 				
-				# Display error message
-				Router::redirect("/users/signup/error");
+			# Display error message
+			Router::redirect("/users/signup/error");
 		}
 		
 		# Die if email already exists
@@ -239,7 +239,15 @@ class users_controller extends base_controller {
 	    	
 	    	# Upload avatar picture
 	    	$avatar = Upload::upload($_FILES, "/uploads/avatars/", array("jpg", "jpeg", "gif", "png"), $this->user->user_id);
-	    	    	
+	    	
+	    	
+	    	$extentions = array("image/jpg", "image/jpeg", "image/gif", "image/png");
+	    	if (!in_array($_FILES['avatar']['type'], $extentions)) {
+	    		echo "Error! .jpg, .jpeg, .png, .gif images only. Please <a href='/users/upload_avatar/'>try again.</a>";
+	    	}
+	    	
+	    	else {
+	    
 	       	# Update database
 	       	$data = Array("avatar" => $avatar);
 	    	
@@ -254,10 +262,11 @@ class users_controller extends base_controller {
 	    	
 	    	# Render template
 	    	Router::redirect("/users/profile"); 
+	    	}
     	} 
     	
     	else {
-    		echo "Error! You haven't chosen any image, or our image is wrong type. Please  <a href='/users/upload_avatar/'>try again.</a>";
+    		echo "Error! You haven't chosen any image. Please <a href='/users/upload_avatar/'>try again.</a>";
     	}
 	}
     
