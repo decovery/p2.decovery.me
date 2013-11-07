@@ -201,6 +201,9 @@ class users_controller extends base_controller {
     
     public function p_edit_profile() { 
     
+    	# Prevent special characters
+    	$_POST['bio'] = htmlentities($_POST['bio']);
+    
     	# Update users bio information
 		$data = Array("bio" => $_POST['bio']);
 	   

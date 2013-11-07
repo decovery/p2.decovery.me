@@ -68,6 +68,7 @@ class posts_controller extends base_controller {
 		$_POST['created'] = Time::now();
 		$_POST['modified'] = Time::now();
 		
+		# Prevent special characters
 		$_POST['content'] = htmlentities($_POST['content']);
 		
 		# Insert post
