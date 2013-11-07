@@ -68,6 +68,8 @@ class posts_controller extends base_controller {
 		$_POST['created'] = Time::now();
 		$_POST['modified'] = Time::now();
 		
+		$_POST['content'] = htmlentities($_POST['content']);
+		
 		# Insert post
 		DB::instance(DB_NAME)->insert('posts', $_POST);
 		
